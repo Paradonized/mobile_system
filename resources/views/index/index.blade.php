@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+@section('title')
+	Home
+@endsection
+
 @section('content')
-    
-<!-- Banner -->
 	<section id="banner" class="major">
 		<div class="inner">
 			<header class="major">
@@ -18,67 +20,65 @@
 		</div>
 	</section>
 
-
-<section id="two" class="spotlights">
-	<section>
-		<a href="generic.html" class="image">
-			<img src="images/brands.jpg" alt="" data-position="center center" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Brands</h3>
-				</header>
-				<p>List of all brands.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
+	<section id="two" class="spotlights">
+		<section>
+			<a href="generic.html" class="image">
+				<img src="images/brands.jpg" alt="" data-position="center center" />
+			</a>
+			<div class="content">
+				<div class="inner">
+					<header class="major">
+						<h3>Brands</h3>
+					</header>
+					<p>List of all brands.</p>
+					<ul class="actions">
+						<li><a href="{{route('brands')}}" class="button">Learn more</a></li>
+					</ul>
+				</div>
 			</div>
-		</div>
+		</section>
+
+		<section>
+			<a href="generic.html" class="image">
+				<img src="images/models.jpg" alt="" data-position="top center" />
+			</a>
+			<div class="content">
+				<div class="inner">
+					<header class="major">
+						<h3>Models</h3>
+					</header>
+					<p>List of all models.</p>
+					<ul class="actions">
+						<li><a href="{{route('models')}}" class="button">Learn more</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<a href="generic.html" class="image">
+				<img src="images/phones.jpg" alt="" data-position="25% 25%" />
+			</a>
+			<div class="content">
+				<div class="inner">
+					<header class="major">
+						<h3>Phones</h3>
+					</header>
+					<p>List of all mobile phones.</p>
+					<ul class="actions">
+						<li><a href="{{route('phones')}}" class="button">Learn more</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
 	</section>
 
-	<section>
-		<a href="generic.html" class="image">
-			<img src="images/models.jpg" alt="" data-position="top center" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Models</h3>
-				</header>
-				<p>List of all models.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<a href="generic.html" class="image">
-			<img src="images/phones.jpg" alt="" data-position="25% 25%" />
-		</a>
-		<div class="content">
-			<div class="inner">
-				<header class="major">
-					<h3>Phones</h3>
-				</header>
-				<p>List of all mobile phones.</p>
-				<ul class="actions">
-					<li><a href="generic.html" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-</section>
-
-
-<div class="inner">
-    <div class="content">
-        <header>
-            <h2>{{$title}}</h2>
-        </header>
-    {!! $text !!}
-    </div>
-</div>
+	<div class="inner">
+    	<div class="content">
+        	<header>
+            	<h2>{{$title}}</h2>
+        	</header>
+    	{!! $text !!}
+    	</div>
+	</div>
 @endsection

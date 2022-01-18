@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\PhonemodelController;
+use App\Http\Controllers\PhoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +17,8 @@ use App\Http\Controllers\IndexController;
 |
 */
 
-Route::get('/',[indexController:: class, 'index' ]  );
+Route::get('/',[indexController:: class, 'index' ]);
+Route::get('/brands',[BrandController:: class, 'indexBrand' ])->name('brands');
+Route::get('/models',[PhonemodelController:: class, 'indexPhonemodel' ])->name('models');
+Route::get('/phones',[PhoneController:: class, 'indexPhone' ])->name('phones');
+Route::get('/phones/{id}','PhoneController@show')->name('phone');

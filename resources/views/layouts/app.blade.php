@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Mobile System | Home</title>
+		<title>Mobile System | @yield('title')</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -24,9 +24,9 @@
 					<nav id="menu">
 						<ul class="links">
 							<li><a href="http://my-phone.com">Home</a></li>
-							<li><a href="#">Brands</a></li>
-							<li><a href="generic.html">Models</a></li>
-							<li><a href="elements.html">Phones</a></li>
+							<li><a href="{{route('brands')}}">Brands</a></li>
+							<li><a href="{{route('models')}}">Models</a></li>
+							<li><a href="{{route('phones')}}">Phones</a></li>
 						</ul>
 					</nav>
 
@@ -91,13 +91,6 @@
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
-							<ul class="icons">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
 							<ul class="copyright">
 								<li>&copy; my-phone</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 							</ul>
