@@ -11,7 +11,6 @@
                 <header class="major">
                     <h1>{{ $phone->name }}</h1>
                 </header>
-                ($allBrands as $brand)
                 <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
                 <p>Brand: {{ $phone->brand->name }}</p>
                 <p>Model: {{ $phone->phonemodel->name }}</p>

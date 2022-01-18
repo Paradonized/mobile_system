@@ -21,4 +21,4 @@ Route::get('/',[indexController:: class, 'index' ]);
 Route::get('/brands',[BrandController:: class, 'indexBrand' ])->name('brands');
 Route::get('/models',[PhonemodelController:: class, 'indexPhonemodel' ])->name('models');
 Route::get('/phones',[PhoneController:: class, 'indexPhone' ])->name('phones');
-Route::get('/phones/{id}','PhoneController@show')->name('phone');
+Route::get('/phones/{id}',[PhoneController:: class, 'show' ])->name('show');

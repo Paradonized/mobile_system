@@ -27,7 +27,7 @@
                         <p class="card-text box">Brand: {{ $phone->brand->name }} </br>
                                              Model: {{ $phone->phonemodel->name }}</br>
                                              Year: {{ $phone->year_of_release }}</p>
-                        <a href="{{route('phone')}}" class="button icon solid fa-search fit">Read more</a>
+                        <a href="{{ route('show', $phone->id) }}" class="button icon solid fa-search fit">Read more</a>
                     </div>
                 </div>
             </div>
