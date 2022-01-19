@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div id="main" class="alt">
+    <div class="alt">
         <section id="one">
             <div class="inner">
                 <header class="major">
@@ -15,10 +15,12 @@
             </div>
         </section>
     </div>
+    <div>
+    <img src="{{ $phone->image }}" alt="Card image cap" style="width: 350px">
+        <p>Brand: {{ $phone->brand->name }}</p>
+        <p>Model: {{ $phone->phonemodel->name }}</p>
+        <p>Year: {{ $phone->year_of_release }}</p>
+        <p>Description:</p> {{ $phone->description }}
+    <div>
 
-    <p>Brand: {{ $phone->brand->name }}</p>
-    <p>Model: {{ $phone->phonemodel->name }}</p>
-    <p>Year: {{ $phone->year_of_release }}</p>
-    <p>Description:</p> {{ $phone->description }}
-    
 @endsection
