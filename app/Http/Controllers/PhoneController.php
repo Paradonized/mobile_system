@@ -15,6 +15,7 @@ class PhoneController extends Controller
 
     public function show($id)
     {
-        return view('index.phone.viewPhone', ['id' =>$id]);
+        $phone=Phone::find($id);
+        return view('index.viewPhone', ['phone' => $phone]);
     }
 }

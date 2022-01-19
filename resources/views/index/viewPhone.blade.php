@@ -12,11 +12,13 @@
                     <h1>{{ $phone->name }}</h1>
                 </header>
                 <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-                <p>Brand: {{ $phone->brand->name }}</p>
-                <p>Model: {{ $phone->phonemodel->name }}</p>
-                <p>Year: {{ $phone->year_of_release }}</p>
-                <p>Description: {{ $phone->description }}</p>
             </div>
         </section>
     </div>
+
+    <p>Brand: {{ $phone->brand->name }}</p>
+    <p>Model: {{ $phone->phonemodel->name }}</p>
+    <p>Year: {{ $phone->year_of_release }}</p>
+    <p>Description:</p> {{ $phone->description }}
+    
 @endsection

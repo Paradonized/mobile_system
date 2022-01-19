@@ -17,6 +17,7 @@
     </section>
 
 
+    
     <div class="row">
         @foreach ($allPhones as $phone)
             <div class="col-4 col-12-medium box" style="width: 18rem; margin: 30px 10px 50px 40px;">
