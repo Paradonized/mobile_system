@@ -11,16 +11,16 @@
                 <header class="major">
                     <h1>{{ $phone->name }}</h1>
                 </header>
-                <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+                <span class="image main"><img src="{{asset('images/pic11.jpg')}}" alt="" /></span>
             </div>
         </section>
     </div>
     <div>
-    <img src="{{ $phone->image }}" alt="Card image cap" style="width: 350px">
+    <img src="{{asset($phone->image)}}" style="width: 350px">
         <p>Brand: {{ $phone->brand->name }}</p>
         <p>Model: {{ $phone->phonemodel->name }}</p>
         <p>Year: {{ $phone->year_of_release }}</p>
-        <p>Description:</p> {{ $phone->description }}
+        <p>Description:</p> {!! $phone->description !!}
     <div>
 
 @endsection
