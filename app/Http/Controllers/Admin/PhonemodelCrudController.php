@@ -39,10 +39,9 @@ class PhonemodelCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        //CRUD::column('id');
+        CRUD::column('id');
         CRUD::column('name');
         CRUD::column('brand');
-        //CRUD::field('brand_id')->type('select')->model('App\Models\Brand')->attribute('name')->entity('brand');
         CRUD::column('description');
         CRUD::column('created_at');
         CRUD::column('updated_at');
@@ -67,7 +66,6 @@ class PhonemodelCrudController extends CrudController
         //CRUD::field('id');
         CRUD::field('name');
         CRUD::field('brand');
-        //CRUD::field('brand_id')->type('select')->model('App\Models\Brand')->attribute('name')->entity('brand'); // notice the name is the foreign key attribute
         CRUD::field('description');
         CRUD::field('created_at');
         CRUD::field('updated_at');

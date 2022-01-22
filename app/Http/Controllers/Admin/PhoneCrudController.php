@@ -60,7 +60,7 @@ class PhoneCrudController extends CrudController
                 'name'=>'image',
                 'type'=>'image',
                 'crop'=>True, //set T to allow cropping F to disable
-                'aspect_ratio'=>1,//set to 0 or remove the line to allow any aspect ratio
+                'aspect_ratio'=>0,//set to 0 or remove the line to allow any aspect ratio
             ]
         ];
     }

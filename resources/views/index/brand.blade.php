@@ -15,8 +15,8 @@
 			</div>
 		</div>
     </section>
-
-    <table class="alt">
+    <br>
+    <table class="alt" style="padding:0 25px 0">
         <thead>
             <td><strong>Name</strong></td>
             <td><strong>Country</strong></td>
@@ -32,4 +32,5 @@
             @endforeach
         </tbody>
     </table>
+    <br>
 @endsection
