@@ -26,7 +26,9 @@ class BrandRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:1|max:50',
+            'country' => 'required|min:3|max:50',
+            'founded' => 'required|min:4|max:4'
         ];
     }
 
@@ -50,7 +52,10 @@ class BrandRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'name.required' => 'Please provide valid name which is between 5 and 50 characters.',
+            'name.unique' => 'Please provide unique name.',
+            'country.required' => 'Please provide valid country which is between 3 and 50 characters.',
+            'founded.required' => 'Please provide a valid year.'
         ];
     }
 }

@@ -26,7 +26,9 @@ class PhoneRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:5|max:255',
+            'description' => 'required',
+            'year_of_release' => 'required|min:4|max:4'
         ];
     }
 
@@ -50,7 +52,10 @@ class PhoneRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'name.required' => 'Please provide valid name which is between 5 and 255 characters.',
+            'name.unique' => 'Please provide unique name.',
+            'description.required' => 'Please provide description.',
+            'year_of_release.required' => 'Please provide a valid year.'
         ];
     }
 }

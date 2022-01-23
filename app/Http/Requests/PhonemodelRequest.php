@@ -26,7 +26,8 @@ class PhonemodelRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:1|max:50',
+            'description' => 'required|min:1|max:255'
         ];
     }
 
@@ -50,7 +51,8 @@ class PhonemodelRequest extends FormRequest
     public function messages()
     {
         return [
-            //
+            'name.required' => 'Please provide valid name which is between 1 and 50 characters.',
+            'description.required' => 'Please provide valid country which is between 1 and 255 characters.'
         ];
     }
 }

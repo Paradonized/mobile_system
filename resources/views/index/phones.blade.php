@@ -17,9 +17,25 @@
     </section>
 
 
-    
+    <div class="form-group">
+        <h3>Search</h3>
+        <form action="{{ route('phones') }}" method="GET" role="search">    
+        <input type="text" class="form-control mr-2" name="term" placeholder="Search for a phone by name..." id="term">
+    	    <div style="margin:15px 10px 0px">
+                <button class="button primary icon solid fa-search" type="submit" title="Search phones">
+                    <span class="">Search</span>
+                </button>
+                <a href="{{ route('phones') }}"></a>
+                    <button class="button icon solid fa-sync-alt" type="button" title="Refresh page" style="margin-left:10px">
+                        <span class="">Refresh</span>
+                    </button>
+                </a>   
+            </div>
+        </form>
+    </div>
+
     <div class="row">
-        @foreach ($allPhones as $phone)
+        @foreach ($phones as $phone)
             <div class="col-4 col-12-medium box center" style="width: 360px; margin: 30px 10px 50px 40px;">
                 <div class="cardtext-center">
                     <img class="card-img-top" src="{{ $phone->image }}" alt="Card image cap" style="display: block; margin-left: auto; margin-right: auto; width: 90%;">
