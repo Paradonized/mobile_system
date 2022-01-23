@@ -6,6 +6,8 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\PhonemodelController;
 use App\Http\Controllers\PhoneController;
 
+use App\Http\Controllers\Select2AutocompleteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

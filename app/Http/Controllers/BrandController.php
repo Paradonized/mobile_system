@@ -12,7 +12,7 @@ class BrandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function indexBrand()
+    public function getAllBrands()
     {
         $brands=Brand::all();
         return view('index.brand', ['allBrands' =>$brands]);

@@ -18,9 +18,9 @@
 
 
     <div class="form-group">
-        <h3>Search</h3>
+        <h2 style="margin-bottom: 10px; margin-left:10px">Search</h2>
         <form action="{{ route('phones') }}" method="GET" role="search">    
-        <input type="text" class="form-control mr-2" name="term" placeholder="Search for a phone by name..." id="term">
+        <input type="text" class="form-control mr-2" name="term" placeholder="Search for a phone by name or by year of release..." id="term">
     	    <div style="margin:15px 10px 0px">
                 <button class="button primary icon solid fa-search" type="submit" title="Search phones">
                     <span class="">Search</span>
@@ -51,4 +51,5 @@
         @endforeach
     </div>
     <br>
+    
 @endsection

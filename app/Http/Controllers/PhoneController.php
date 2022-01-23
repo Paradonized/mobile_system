@@ -13,14 +13,13 @@ class PhoneController extends Controller
             ['name','!=', Null],
             [function ($query) use ($request){
                 if(($term=$request->term)){
-                    $query->orWhere('name','LIKE','%'.$term.'%')->get();
+                    $query->Where('name','LIKE','%'.$term.'%')->orWhere('year_of_release','LIKE','%'.$term.'%')->get();
                 }
             }]
         ])
             ->orderBy("id","desc")
             ->paginate(10);
-        return view('index.phones', compact('phones'))
-            ->with('i', (request()->input('page',1)-1)*5);    
+        return view('index.phones', compact('phones'));    
     }
 
     public function show($id)
