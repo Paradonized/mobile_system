@@ -36,7 +36,7 @@
 
     <div class="row">
         @foreach ($phones as $phone)
-            <div class="col-4 col-12-medium box center" style="width: 360px; margin: 30px 10px 50px 40px;">
+            <div class="col-4 col-12-medium box center" style="width: 360px; margin: 30px 10px 10px 40px;">
                 <div class="cardtext-center">
                     <img class="card-img-top" src="{{ $phone->image }}" alt="Card image cap" style="display: block; margin-left: auto; margin-right: auto; width: 90%;">
                     <div class="card-body">
