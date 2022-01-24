@@ -25,11 +25,10 @@
                 <button class="button primary icon solid fa-search" type="submit" title="Search phones">
                     <span class="">Search</span>
                 </button>
-                <a href="{{ route('phones') }}"></a>
-                    <button class="button icon solid fa-sync-alt" type="button" title="Refresh page" style="margin-left:10px">
-                        <span class="">Refresh</span>
+                <a href="{{ route('phones') }}"></a> 
+                    <button class="button icon solid fa-sync-alt" type="submit" title="Refresh page" style="margin-left:10px">
+                        Refresh
                     </button>
-                </a>   
             </div>
         </form>
     </div>
