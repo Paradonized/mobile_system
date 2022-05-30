@@ -17,12 +17,12 @@ class PhoneController extends Controller
                 }
             }]
         ])
-            ->orderBy("id","desc")
+            ->orderBy("year_of_release","desc")
             ->paginate(10);
         return view('index.phones', compact('phones'));    
     }
 
-    public function show($id)
+    public function getById($id)
     {
         $phone=Phone::find($id);
         return view('index.viewPhone', ['phone' => $phone]);
