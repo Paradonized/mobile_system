@@ -1,78 +1,67 @@
-# За проекта
-Проектът mobile_system е система за телефони, направена с Laravel Framework. Системата съдържа всякаква информация за телефони. Всеки телефон има марка, модел и година, в която е произведен. В системата също се съдържа информация за марките и моделите. 
--> https://github.com/Paradonized/mobile_system
+# Mobile_system
+Project mobile_system is made with Laravel Framework. It contains information about phones, brands, models and years of release.
 
-# Основни елементи
+## Installation
+To deploy this project you need to have XAMPP and a couple more steps.
 
-## Model<br />
+First, the httpd-vhosts .conf file should be edited. The path to this file is `...\xampp\apache\conf\extra`. Its recomended to use the full directory path.
+```bash
+<VirtualHost *:80>
+    DocumentRoot "...\xampp\htdocs\nameOfFolder"
+    ServerName serverName.com
+    <Directory "...\xampp\htdocs\nameOfFolder">
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride all
+        Order Deny,Allow
+        Allow from all
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+After that, we need to update the hosts file in directory `...\Windows\System32\drivers\etc` (this is for Windows). Its important to run your text redactor as an admin. 
+```bash
+127.0.0.1 serverName.com
+```
+## Screenshots
+![my-phoneIndexScr](https://user-images.githubusercontent.com/85744016/175363487-80202d1b-e439-4ccb-9b43-087eb3327330.png)
+![my-phoneBrandsScr](https://user-images.githubusercontent.com/85744016/175363535-631f70d4-5710-425d-9159-93ba3b1991e6.png)
+![my-phoneModelsScr](https://user-images.githubusercontent.com/85744016/175363547-6341cc87-15c3-45ac-8fc6-f5b9bf2ba454.png)
+![my-phonePhonesScr](https://user-images.githubusercontent.com/85744016/175363562-9620cc69-1c94-438a-8e25-dfe41a0b22bc.png)
+![my-phonePhoneScr](https://user-images.githubusercontent.com/85744016/175363566-142b66e7-e50a-437d-873a-a057319e07c3.png)
 
-* Brand<br />
-->Това е моделът на марките. Всяка марка има идентификатор, собствено оригинално име, държавата, към която принадлежат, и година на основаване.
 
+# Components
+
+## Models
+
+* Brand
 * Phonemodel<br />
-->Това е моделът на моделите на телефоните. Всеки модел има идентификатор, собствено име, връзка към Brand, която обслужва връзката между моделите и марките - една марка има много модели, и описание на модела. Връзката е изразена в модела чрез функцията brand, намираща се в модела. 
-
+Model is a key word so it cannot be used. Has `belongsTo()` relation with Brand, since many models can belong to one brand, but a model cannot belong to many brands.
 * Phone<br />
-->Това е моделът на телефоните. Полетата на модела са: идентификатор, собствено оригинално име, връзка към Brand, връзка към Phonemodel, описание, годината на производство и снимка на самият телефон. Връзките са изразени чрез функциите brand и phonemodel, като всеки телефон принадлежи на една марка и на един модел.
+Has `belongsTo()` relations with Brand and Phonemodel. One phone can have only one brand and only one model. Many phones can belong to one brand and to one model. 
 
+## Controllers
 
-## Controller
-
-* IndexController<br />
-Контролерът отговаря за всички действия в главната страница на сайта.
-
-* BrandController<br />
-Контролерът отговаря за всички действия с модела на марките. <br />
-Функцията indexBrand дава информацията на view-то "brand". 
-
-* PhonemodelController<br />
-Контролерът отговаря за всички действия с модела на моделите на телефоните. <br />
-Функцията indexPhonemodel дава информацията на view-то "phonemodel". 
-
-* PhoneController<br />
-Контролерът отговаря за всички действия с модела на телефоните. Функцията index подава информация за телефоните на view-то "phones". Функцията е също отговорна и за търсенето на телефоните. Те могат да бъдат търсени по име или дата на производство. Телефоните винаги съдържат имената на марката и модела, към които принадлежи, в името си. Резултатите от търсенето се подреждат по id в низходящ ред. <br />
-Функцията show с параметър id подава id-то на съответният телефон към view-то "viewPhone".
-
-* CrudController-и<br />
-Тези контролери отговарят за създаването, четенето, редактирането и изтриването на записи от таблите. <br />
-Всеки модел има собствен контролер.
-
+* IndexController
+* BrandController
+* PhonemodelController
+* PhoneController
+* CrudController
 
 ## View
-Тук имаме две папки, съдържащи view.-та. Всяка папка има собствена цел.
-
 * layouts<br />
-Тази папка съдържа всички view-та, които служат като шаблони. Шаблоните ни спестяват писането и повтарянето на ненужен код на много места.
-
-->app<br />
-В това view се съдържа основният изглед (header, footer и навигация), както и всички скриптове, които използваме.<br />
-чрез @yield задаваме какво и къде ще се визуализират секциите.<br />
-
+`@yield` is used to define a section in a layout and is constantly used to get content from a child page unto a master page.<br />
  
 * index<br />
-В тази папка се съдържат оформленията на системата. Всяко view се визуализира заедно с app (или по-точно в него).
-Чрез @extends задаваме върху кой шаблон ще се визуализира даденото view.
-Чрез @section се визуализира view-то в дадената секция в шаблона.
-
-->brand<br />
-Визуализира таблица с марките.
- 
-->index<br />
-Визуализира главната страница.
- 
-->phonemodel<br />
-Визуализира таблица с моделите на телефоните.
- 
-->phones<br />
-Визуализира малък запис на всички телефони.
- 
-->viewPhone<br />
-Визуализира пълният запис на даден телефон.
- 
+`@extends` lets you "extend" a template, which defines its own sections.<br />
+`@section` inject content layout from extended blade layout and display in child blade.
  
 ## Routes
-Тук работим с файла web.php. Тук се задават пътищата за всяко view, кой контролер и коя негова функция отговаря.
+From web.php is set the route for each view, as well as the controllers and their functions.
 
+# Administrative panel 
+Backpack is used for all CRUD operations. Backpack is accessible via URL link /admin.
 
-# Административен панел
-Използваме Backpack за всички Crud операции, както и за генерирането на Crud методите. Достъпваме до Backpack като в URL-а допълваме с /admin.
+# Future improvements
+* Filter search.
+* "Order by" functionality.
