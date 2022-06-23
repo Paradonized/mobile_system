@@ -22,6 +22,8 @@ After that, we need to update the hosts file in directory `...\Windows\System32\
 ```bash
 127.0.0.1 serverName.com
 ```
+The last step is creating a new database in phpMyAdmin. The URL to access phpMyAdmin is `http://localhost/phpmyadmin`.
+
 ## Screenshots
 ![my-phoneIndexScr](https://user-images.githubusercontent.com/85744016/175363487-80202d1b-e439-4ccb-9b43-087eb3327330.png)
 ![my-phoneBrandsScr](https://user-images.githubusercontent.com/85744016/175363535-631f70d4-5710-425d-9159-93ba3b1991e6.png)
@@ -60,7 +62,7 @@ Has `belongsTo()` relations with Brand and Phonemodel. One phone can have only o
 From web.php is set the route for each view, as well as the controllers and their functions.
 
 # Administrative panel 
-Backpack is used for all CRUD operations. Backpack is accessible via URL link /admin.
+Backpack is used for all CRUD operations. Backpack is accessible via adding /admin to the base URL. Here, you need to make yourself a personal (local) account.
 
 # Future improvements
 * Filter search.
