@@ -1,5 +1,7 @@
 # Mobile_system
-Project mobile_system is made with Laravel Framework. It contains information about phones, brands, models and years of release.
+Project mobile_system is made with Laravel Framework. It contains information about phones, brands, models and years of release.<br />
+<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Paradonized/mobile_system?style=plastic">
+
 
 ## Installation
 To deploy this project you need to have XAMPP and a couple more steps.
